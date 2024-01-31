@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+
+int max(int a, int b){
+    if (a>=b) return a;
+    else return b;
+}
+
+maxSum(int A[],int L, int M, int R){
+	int i, lSum, lMax, rSum, rMax;
+	lSum=0;
+	rSum=0;
+	lMax=INT_MIN;
+	rMax = INT_MIN;
+	
+	for(i=M; i>=L; i--){
+        lSum+=A[i];
+        lMax = max(lMax,lSum);		        
+    }
+
+	for(i=M+1; i<=R; i++){
+        rSum+=A[i];
+        rMax = max(rMax,rSum);
+        
+    }
+	
+	return lMax + rMax;
+}
+
+
+
+int helper(int *nums,int l, int r){
+    if(l==r) return nums[l];
+    int m = (l+r)/2;
+    int Left = helper(nums,l,m);
+    int Right = helper(nums,m+1,r);
+    int crossingValue = maxSum(nums,l,m,r);
+    return max(max(Left,Right),crossingValue);
+
+}
+
+
+
+int maxSubArray(int* nums, int numsSize) {
+
+    return helper(nums,0,numsSize-1);
+
+}
+
+
+
+
