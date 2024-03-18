@@ -1,1 +1,2 @@
-My solutions of GeeksForGeeks, Leetcode and Hackerrank questions
+My solutions of GeeksForGeeks, Leetcode and Hackerrank questions.
+It also includes random questions.
