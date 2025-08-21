@@ -9,7 +9,7 @@ class Solution {
             if (reversed > max/10) return 0; 
             if (reversed < min/10) return 0; 
             reversed = reversed * 10 + lastDigit;
-            x = x / 10; t
+            x = x / 10;
         }
         return reversed;
     }
