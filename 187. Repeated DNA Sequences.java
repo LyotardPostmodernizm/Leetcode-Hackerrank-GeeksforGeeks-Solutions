@@ -26,7 +26,6 @@ class Solution {  //HashSet solution
     public List<String> findRepeatedDnaSequences(String s) {
         Set<String> set = new HashSet<>();
         Set<String> sequences = new HashSet<>();
-        List<String> result = new ArrayList<>();
         int i;
         String sequence;
 
